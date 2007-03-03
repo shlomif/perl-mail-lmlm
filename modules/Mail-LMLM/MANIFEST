@@ -29,4 +29,5 @@ examples/Iglu/Iglu/LMLM/Types/Linuxology.pm
 examples/Iglu/Iglu/LMLM/Types/Perl_IL.pm
 examples/Iglu/Iglu/LMLM/Types/Hamakor.pm
 t/use.t
+t/pod.t
 META.yml                                 Module meta-data (added by MakeMaker)
