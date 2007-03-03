@@ -36,3 +36,32 @@ sub DESTROY
 }
 
 1;
+
+__END__
+
+=head1 Mail::LMLM::Object
+
+Warning! This is an internal Mail::LMLM class. It is used as the base class
+for all LMLM objects.
+
+=head1 FUNCTIONS
+
+=head2 new
+
+The default constructor.
+
+=head2 $self->initialize(@args)
+
+Should be over-rided to initialize the object.
+
+=head2 $self->destroy_()
+
+Destroys the object.
+
+=head2 DESTROY
+
+the default destructor.
+
+=head1 AUTHOR
+
+Shlomi Fish, L<http://www.shlomifish.org/>.
