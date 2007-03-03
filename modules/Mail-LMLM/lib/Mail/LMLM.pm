@@ -343,7 +343,7 @@ L<Mail::LMLM::Render,1>
 
 Shlomi Fish E<lt>shlomif@vipe.technion.ac.ilE<gt>
 
-=head1 COPYRIGHT AND DISCLAIMER
+=head1 LICENSE
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -363,6 +363,8 @@ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
+
+(This is the MIT X11 License).
 
 =cut
 
