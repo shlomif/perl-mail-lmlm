@@ -1,12 +1,17 @@
-use ExtUtils::MakeMaker;
+use strict;
+use warnings;
 
-my $dist_name = "Mail-LMLM";
+use Module::Build;
 
-WriteMakefile(
-    'NAME' => 'Mail::LMLM',
-    'DISTNAME' => $dist_name,
-    'VERSION_FROM' => 'lib/Mail/LMLM.pm',
-    );
+my $build = Module::Build->new(
+    'module_name' => "Mail::LMLM",
+    'requires' => 
+    {
+        'Test::More' => 0,
+    },
+    'license' => "bsd",
+);
+$build->create_build_script;
 
 use lib './lib';
 require Mail::LMLM;
@@ -14,11 +19,9 @@ require Mail::LMLM;
 my $version = $Mail::LMLM::VERSION;
 
 print "Generating the RPM SPEC file\n";
-my $rpm_spec = "perl-${dist_name}.spec";
-
+my $rpm_spec = "perl-Mail-LMLM.spec";
 # Remove the .spec because it's not writable.
 unlink($rpm_spec);
-
 open I, "<$rpm_spec.in";
 open O, ">$rpm_spec";
 while (<I>)

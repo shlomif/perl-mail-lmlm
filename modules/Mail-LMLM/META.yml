@@ -1,11 +1,38 @@
---- #YAML:1.0
-name:                Mail-LMLM
-version:             0.6300
-abstract:            ~
-license:             ~
-generated_by:        ExtUtils::MakeMaker version 6.31
-distribution_type:   module
-requires:     
+---
+name: Mail-LMLM
+version: 0.6400
+author: []
+abstract: List of Mailing Lists Manager
+license: bsd
+resources:
+  license: http://www.opensource.org/licenses/bsd-license.php
+requires:
+  Test::More: 0
+provides:
+  Mail::LMLM:
+    file: lib/Mail/LMLM.pm
+    version: 0.6400
+  Mail::LMLM::Object:
+    file: lib/Mail/LMLM/Object.pm
+  Mail::LMLM::Render:
+    file: lib/Mail/LMLM/Render.pm
+  Mail::LMLM::Render::HTML:
+    file: lib/Mail/LMLM/Render/HTML.pm
+  Mail::LMLM::Types::Base:
+    file: lib/Mail/LMLM/Types/Base.pm
+  Mail::LMLM::Types::Egroups:
+    file: lib/Mail/LMLM/Types/Egroups.pm
+  Mail::LMLM::Types::Ezmlm:
+    file: lib/Mail/LMLM/Types/Ezmlm.pm
+  Mail::LMLM::Types::Listar:
+    file: lib/Mail/LMLM/Types/Listar.pm
+  Mail::LMLM::Types::Listserv:
+    file: lib/Mail/LMLM/Types/Listserv.pm
+  Mail::LMLM::Types::Mailman:
+    file: lib/Mail/LMLM/Types/Mailman.pm
+  Mail::LMLM::Types::Majordomo:
+    file: lib/Mail/LMLM/Types/Majordomo.pm
+generated_by: Module::Build version 0.2805
 meta-spec:
-    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
-    version: 1.2
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
