@@ -55,3 +55,37 @@ sub get_online_archive
         return $self->get_homepage() . "messages/";
     }
 }
+
+
+__END__
+
+=head1 NAME
+
+Mail::LMLM::Types::Egroups - mailing list type for YahooGroups.
+
+=head1 METHODS
+
+=head2 get_homepage_hostname
+
+Internal method.
+
+=head2 initialize
+
+Over-rides L<Mail::LMLM::Types::Base>'s method.
+
+=head2 get_homepage
+
+Calculates the homepage of the group.
+
+=head2 get_online_archive
+
+Over-rides the equivalent from L<Mail::LMLM::Types::Ezmlm>.
+
+=head1 SEE ALSO
+
+L<Mail::LMLM::Types::Ezmlm>
+
+=head1 AUTHOR
+
+Shlomi Fish, L<http://www.shlomifish.org/>.
+
