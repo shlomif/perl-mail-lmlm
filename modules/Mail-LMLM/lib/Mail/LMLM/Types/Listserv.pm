@@ -8,28 +8,14 @@ use vars qw(@ISA);
 
 @ISA=qw(Mail::LMLM::Types::Base);
 
-sub get_subscribe_address
-{
-    my $self = shift;
-    
-    return $self->group_form("subscribe");
-}
-
-sub get_unsubscribe_address
-{
-    my $self = shift;
-
-    return $self->group_form("unsubscribe");
-}
-
-sub get_post_address
+sub _get_post_address
 {
     my $self = shift;
 
     return ($self->get_group_base(), $self->get_hostname());
 }
 
-sub get_owner_address
+sub _get_owner_address
 {
     my $self = shift;
 
@@ -95,7 +81,7 @@ sub render_post
     return $self->render_something_with_email_addr(
         $htmler,
         "Send your messages to the following address: ",
-        \&get_post_address
+        \&_get_post_address
         );
 }
 
@@ -108,8 +94,45 @@ sub render_owner
     return $self->render_something_with_email_addr(
         $htmler,
         "Send messages to the mailing-list owner to the following address: ",
-        \&get_owner_address
+        \&_get_owner_address
         );
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+Mail::LMLM::Types::Listserv - mailing list type for listserv.
+
+=head1 METHODS
+
+=head2 render_mail_management
+
+Internal method.
+
+=head2 render_subscribe
+
+Over-rides the equivalent from L<Mail::LMLM::Types::Base>.
+
+=head2 render_unsubscribe
+
+Over-rides the equivalent from L<Mail::LMLM::Types::Base>.
+
+=head2 render_post
+
+Over-rides the equivalent from L<Mail::LMLM::Types::Base>.
+ 
+=head2 render_owner
+
+Over-rides the equivalent from L<Mail::LMLM::Types::Base>.
+
+=head1 SEE ALSO
+
+L<Mail::LMLM::Types::Base>
+
+=head1 AUTHOR
+
+Shlomi Fish, L<http://www.shlomifish.org/>.
+

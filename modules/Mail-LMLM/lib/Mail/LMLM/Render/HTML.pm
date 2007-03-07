@@ -19,7 +19,7 @@ sub initialize
     return 0;
 }
 
-sub htmlize_onechar
+sub _htmlize_onechar
 {
     my $c = shift;
 
@@ -45,11 +45,11 @@ sub htmlize_onechar
     }
 }
 
-sub htmlize
+sub _htmlize
 {
     my $text = shift;
 
-    $text =~ s/(<|>|\&|\n)/&htmlize_onechar($1)/ge;
+    $text =~ s/(<|>|\&|\n)/_htmlize_onechar($1)/ge;
 
     return $text;
 }
@@ -71,7 +71,7 @@ sub text
         $style = {};
     }
 
-    my $out = htmlize($text);
+    my $out = _htmlize($text);
 
     if ($style->{'bold'})
     {
@@ -262,4 +262,73 @@ sub horizontal_line
 }
 
 1;
+
+=head1 NAME
+
+Mail::LMLM::Render::HTML - backend for rendering HTML.
+
+=head1 SYNOPSIS
+
+    use Mail::LMLM::Render::HTML;
+
+    open O, ">out.html";
+    my $r = Mail::LMLM::Render::HTML->new(\*O);
+
+    $r->start_document("My Document", "Head Title");
+    
+    $r->start_section("Google", { 'title_url' => "http://www.google.com/", });
+    
+    $r->para("Google is a very nice search engine.");
+    $r->end_section();
+    $r->end_document();
+    close(O);
+
+=head1 DESCRIPTION
+
+This is a derived class of L<Mail::LMLM::Render> that renders HTML.
+
+=head1 METHODS
+
+=head2 start_document($head_title, $body_title)
+
+=head2 end_document()
+
+=head2 start_section($title [, { 'title_url' => $url } ])
+
+=head2 end_section()
+
+=head2 start_para()
+
+=head2 end_para()
+
+=head2 text($text [, $style])
+
+=head2 newline()
+
+=head2 start_link($url)
+
+=head2 end_link()
+
+=head2 indent_inc()
+
+=head2 indent_dec()
+
+=head2 horizontal_line()
+
+=head2 email_address($account,$host)
+
+=head2 url($url [, $inside])
+
+=head2 para($text [, $style])
+
+See the documentation at L<Mail::LMLM::Render>.
+
+=head2 initialize()
+
+Construction method. For internal use.
+
+=head1 AUTHOR
+
+Shlomi Fish L<http://www.shlomifish.org/>.
+
 
