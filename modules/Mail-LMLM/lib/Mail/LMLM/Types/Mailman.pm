@@ -83,7 +83,14 @@ sub _get_owner_address
 {
     my $self = shift;
 
-    return @{$self->{'owner'}};
+    if ($self->{owner})
+    {
+        return @{$self->{owner}};
+    }
+    else
+    {
+        return $self->group_form("owner");
+    }
 }
 
 sub render_maint_url
