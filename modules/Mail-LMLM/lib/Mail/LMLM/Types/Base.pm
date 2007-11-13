@@ -102,7 +102,7 @@ sub get_hostname
 {
     my $self = shift;
 
-    return $self->{'hostname'};
+    return $self->{'hostname'} || $self->get_default_hostname();
 }
 
 sub get_online_archive
