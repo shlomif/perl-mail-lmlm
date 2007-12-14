@@ -212,6 +212,8 @@ sub start_document
     my $head_title = shift;
 
     my $body_title = shift;
+
+    $head_title = _htmlize($head_title);
     
     my $o = $self->{'out'};
 
