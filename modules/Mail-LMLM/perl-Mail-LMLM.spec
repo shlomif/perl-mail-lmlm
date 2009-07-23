@@ -1,5 +1,5 @@
 Name: perl-Mail-LMLM
-Version: 0.6400
+Version: 0.6500
 Release: 1
 Group: Networking/Mail
 Source: http://www.cpan.org/modules/by-authors/id/S/SH/SHLOMIF/Mail-LMLM-%{version}.tar.gz
