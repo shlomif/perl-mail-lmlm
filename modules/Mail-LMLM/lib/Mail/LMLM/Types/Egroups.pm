@@ -56,6 +56,7 @@ sub get_online_archive
     }
 }
 
+1;
 
 __END__
 
