@@ -6,7 +6,7 @@ use Mail::LMLM::Object;
 
 use vars qw($VERSION);
 
-$VERSION = '0.6700';
+$VERSION = '0.6800';
 
 use vars qw(@ISA);
 
@@ -26,13 +26,20 @@ use vars qw(%mailing_list_classes);
 
 my $prefix = "Mail::LMLM::Types::";
 
+sub _pref
+{
+    my $name = shift;
+
+    return $prefix . $name;
+}
+
 %mailing_list_classes = 
 (
     (
-        map { $_ => $prefix . ucfirst($_) } 
+        map { $_ => _pref(ucfirst($_)) } 
         ('egroups', 'ezmlm', 'listar', 'majordomo', 'listserv', 'mailman')
     ),
-    "google" => "GoogleGroups",
+    "google" => _pref("GoogleGroups"),
 );
 
 use vars qw(@render_what);

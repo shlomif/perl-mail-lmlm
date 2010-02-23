@@ -93,6 +93,18 @@ sub _get_owner_address
     }
 }
 
+sub get_default_hostname
+{
+    return "googlegroups.com";
+}
+
+sub get_online_archive
+{
+    my $self = shift;
+
+    return $self->SUPER::get_online_archive()
+        || $self->get_maintenance_url();
+}
 1;
 
 __END__
@@ -136,6 +148,14 @@ Over-rides the equivalent from L<Mail::LMLM::Types::Base>.
 
 Render a maintenance URL. Internal method.
 
+
+=head2 get_default_hostname
+
+The default hostname. Internal method.
+
+=head2 get_online_archive
+
+The online archive. Internal method.
 
 =head1 SEE ALSO
 

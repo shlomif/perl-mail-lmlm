@@ -1,3 +1,7 @@
+0.6800    ( Tue Feb 23 22:56:49 IST 2010 )
+    - Fix the Google Groups behaviour. (It was completely broken beforehand).
+        - We need some t/*.t tests.
+
 0.6700    ( Tue Feb 23 22:34:27 IST 2010 )
     - Fix the building of the rpm using rpmbuild -tb Mail-LMLM-0.6600.tar.gz
 
