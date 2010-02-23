@@ -18,6 +18,7 @@ lib/Mail/LMLM/Render.pm
 lib/Mail/LMLM/Types/Base.pm
 lib/Mail/LMLM/Types/Egroups.pm
 lib/Mail/LMLM/Types/Ezmlm.pm
+lib/Mail/LMLM/Types/GoogleGroups.pm
 lib/Mail/LMLM/Types/Listar.pm
 lib/Mail/LMLM/Types/Listserv.pm
 lib/Mail/LMLM/Types/Mailman.pm

@@ -1,19 +1,18 @@
 ---
-name: Mail-LMLM
-version: 0.6500
+abstract: 'List of Mailing Lists Manager'
 author: []
-abstract: List of Mailing Lists Manager
-license: bsd
-resources:
-  license: http://www.opensource.org/licenses/bsd-license.php
-requires:
-  Test::More: 0
 configure_requires:
-  Module::Build: 0.34
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3603'
+license: bsd
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Mail-LMLM
 provides:
   Mail::LMLM:
     file: lib/Mail/LMLM.pm
-    version: 0.6500
+    version: 0.6600
   Mail::LMLM::Object:
     file: lib/Mail/LMLM/Object.pm
   Mail::LMLM::Render:
@@ -26,6 +25,8 @@ provides:
     file: lib/Mail/LMLM/Types/Egroups.pm
   Mail::LMLM::Types::Ezmlm:
     file: lib/Mail/LMLM/Types/Ezmlm.pm
+  Mail::LMLM::Types::GoogleGroups:
+    file: lib/Mail/LMLM/Types/GoogleGroups.pm
   Mail::LMLM::Types::Listar:
     file: lib/Mail/LMLM/Types/Listar.pm
   Mail::LMLM::Types::Listserv:
@@ -34,7 +35,8 @@ provides:
     file: lib/Mail/LMLM/Types/Mailman.pm
   Mail::LMLM::Types::Majordomo:
     file: lib/Mail/LMLM/Types/Majordomo.pm
-generated_by: Module::Build version 0.34
-meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+requires:
+  Test::More: 0
+resources:
+  license: http://www.opensource.org/licenses/bsd-license.php
+version: 0.6600
