@@ -1,3 +1,6 @@
+0.6600:   ( Tue Feb 23 22:24:23 IST 2010 )
+    - Add support for Google Groups mailing lists (under the "google" type).
+
 0.6500:   ( Thu Jul 23 18:04:02 IDT 2009 )
     - Added the -owner address to mailman.
     
