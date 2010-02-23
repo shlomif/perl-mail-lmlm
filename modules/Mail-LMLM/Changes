@@ -1,3 +1,6 @@
+0.6700    ( Tue Feb 23 22:34:27 IST 2010 )
+    - Fix the building of the rpm using rpmbuild -tb Mail-LMLM-0.6600.tar.gz
+
 0.6600:   ( Tue Feb 23 22:24:23 IST 2010 )
     - Add support for Google Groups mailing lists (under the "google" type).
 

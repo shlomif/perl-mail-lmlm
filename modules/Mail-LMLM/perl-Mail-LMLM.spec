@@ -1,5 +1,5 @@
 Name: perl-Mail-LMLM
-Version: 0.6600
+Version: 0.6700
 Release: 1
 Group: Networking/Mail
 Source: http://www.cpan.org/modules/by-authors/id/S/SH/SHLOMIF/Mail-LMLM-%{version}.tar.gz
@@ -21,23 +21,24 @@ unsubscribing, posting messages, where to find the archive, etc.
 
 
 %build
-%{__perl} Makefile.PL PREFIX=%{prefix} < /dev/null
-make OPTIMIZE="$RPM_OPT_FLAGS" PREFIX=%{prefix}
-make test
+%{__perl} Build.PL installdirs=vendor
+./Build
+
+%check
+./Build test
 
 %install
-rm -rf $RPM_BUILD_ROOT
-%makeinstall PREFIX=$RPM_BUILD_ROOT%{prefix} INSTALLMAN1DIR=$RPM_BUILD_ROOT%{_mandir}/man1 INSTALLMAN3DIR=$RPM_BUILD_ROOT%{_mandir}/man3 INSTALLSITEMAN1DIR=$RPM_BUILD_ROOT%{_mandir}/man1 INSTALLSITEMAN3DIR=$RPM_BUILD_ROOT%{_mandir}/man3 INSTALLVENDORMAN1DIR=$RPM_BUILD_ROOT%{_mandir}/man1 INSTALLVENDORMAN3DIR=$RPM_BUILD_ROOT%{_mandir}/man3
-rm -f `find $RPM_BUILD_ROOT -name perllocal.pod`
+rm -rf %{buildroot}
+./Build install destdir=%{buildroot}
 
 %clean
-rm -fr $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr (-,root,root)
 %doc README TODO MANIFEST COPYING INSTALL
 %{_mandir}/*/*
-%{_libdir}/perl5/site_perl/*/Mail
+%{_libdir}/perl5/vendor_perl/*
 
 %changelog
 * Thu Jun 19 2003 Shlomi Fish <shlomif@vipe.technion.ac.il> 0.5.15-1
