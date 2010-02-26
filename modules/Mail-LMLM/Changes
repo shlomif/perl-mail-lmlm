@@ -1,3 +1,5 @@
+    - Correct the Google groups' mailing list homepage.
+
 0.6800    ( Tue Feb 23 22:56:49 IST 2010 )
     - Fix the Google Groups behaviour. (It was completely broken beforehand).
         - We need some t/*.t tests.

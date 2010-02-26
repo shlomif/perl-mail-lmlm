@@ -15,7 +15,6 @@ sub parse_args
 
     my $args = shift;
 
-    $self->{'homepage'} = "http://groups.google.com/group/";
 
     $args = $self->SUPER::parse_args($args);
     
@@ -40,6 +39,11 @@ sub parse_args
         }
     }
 
+    $self->{'google_homepage'} =
+        "http://groups.google.com/group/" . $self->get_group_base(). "/";
+
+    $self->{'homepage'} = $self->{'google_homepage'};
+
     return \@left;
 }
 
@@ -53,9 +57,8 @@ sub get_maintenance_url
     }
     else
     {
-        return $self->{'homepage'} . $self->get_group_base(). "/";
+        return $self->{'google_homepage'};
     }
-        
 }
 
 sub group_form
