@@ -12,7 +12,7 @@ name: Mail-LMLM
 provides:
   Mail::LMLM:
     file: lib/Mail/LMLM.pm
-    version: 0.6800
+    version: 0.6801
   Mail::LMLM::Object:
     file: lib/Mail/LMLM/Object.pm
   Mail::LMLM::Render:
@@ -39,4 +39,4 @@ requires:
   Test::More: 0
 resources:
   license: http://www.opensource.org/licenses/bsd-license.php
-version: 0.6800
+version: 0.6801
