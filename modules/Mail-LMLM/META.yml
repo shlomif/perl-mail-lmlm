@@ -2,12 +2,19 @@
 abstract: 'List of Mailing Lists Manager'
 author:
   - unknown
-build_requires: {}
+build_requires:
+  Test::More: 0
 configure_requires:
   Module::Build: 0.38
 dynamic_config: 1
 generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.120630'
-license: bsd
+keywords:
+  - E-mail
+  - 'mailing lists'
+  - 'mailing list'
+  - HTML
+  - manager
+license: mit
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
@@ -50,7 +57,10 @@ provides:
     file: lib/Mail/LMLM/Types/Majordomo.pm
     version: 0
 requires:
-  Test::More: 0
+  strict: 0
+  vars: 0
+  warnings: 0
 resources:
-  license: http://www.opensource.org/licenses/bsd-license.php
+  license: http://www.opensource.org/licenses/mit-license.php
+  repository: http://bitbucket.org/shlomif/perl-mail-lmlm/overview
 version: 0.6801
