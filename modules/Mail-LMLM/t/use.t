@@ -2,11 +2,11 @@
 
 use strict;
 
-use Test;
-BEGIN { plan tests => 2 }
+use Test::More tests => 2;
 
-use Mail::LMLM;
-ok(1);
-use Mail::LMLM::Render::HTML;
-ok(1);
+BEGIN
+{
+    use_ok ('Mail::LMLM');
+    use_ok ('Mail::LMLM::Render::HTML');
+}
 

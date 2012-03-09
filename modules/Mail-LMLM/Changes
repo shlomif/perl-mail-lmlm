@@ -1,3 +1,7 @@
+    - Convert t/use.t to Test::More and use_ok().
+        - it previously used Test.pm and plain ok()s after use statements.
+        - Test.pm is no longer recommended.
+
 0.6801    ( Fri Feb 26 13:20:42 IST 2010 )
     - Correct the Google groups' mailing list homepage.
 

@@ -34,3 +34,4 @@ TODO
 t/pod-coverage.t
 t/pod.t
 t/use.t
+META.json

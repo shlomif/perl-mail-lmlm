@@ -1,9 +1,12 @@
 ---
 abstract: 'List of Mailing Lists Manager'
-author: []
+author:
+  - unknown
+build_requires: {}
 configure_requires:
-  Module::Build: 0.36
-generated_by: 'Module::Build version 0.3603'
+  Module::Build: 0.38
+dynamic_config: 1
+generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.120630'
 license: bsd
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -15,26 +18,37 @@ provides:
     version: 0.6801
   Mail::LMLM::Object:
     file: lib/Mail/LMLM/Object.pm
+    version: 0
   Mail::LMLM::Render:
     file: lib/Mail/LMLM/Render.pm
+    version: 0
   Mail::LMLM::Render::HTML:
     file: lib/Mail/LMLM/Render/HTML.pm
+    version: 0
   Mail::LMLM::Types::Base:
     file: lib/Mail/LMLM/Types/Base.pm
+    version: 0
   Mail::LMLM::Types::Egroups:
     file: lib/Mail/LMLM/Types/Egroups.pm
+    version: 0
   Mail::LMLM::Types::Ezmlm:
     file: lib/Mail/LMLM/Types/Ezmlm.pm
+    version: 0
   Mail::LMLM::Types::GoogleGroups:
     file: lib/Mail/LMLM/Types/GoogleGroups.pm
+    version: 0
   Mail::LMLM::Types::Listar:
     file: lib/Mail/LMLM/Types/Listar.pm
+    version: 0
   Mail::LMLM::Types::Listserv:
     file: lib/Mail/LMLM/Types/Listserv.pm
+    version: 0
   Mail::LMLM::Types::Mailman:
     file: lib/Mail/LMLM/Types/Mailman.pm
+    version: 0
   Mail::LMLM::Types::Majordomo:
     file: lib/Mail/LMLM/Types/Majordomo.pm
+    version: 0
 requires:
   Test::More: 0
 resources:
