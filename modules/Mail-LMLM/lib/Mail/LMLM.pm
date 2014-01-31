@@ -2,6 +2,8 @@ package Mail::LMLM;
 
 use strict;
 
+use 5.008;
+
 use Mail::LMLM::Object;
 
 use vars qw($VERSION);
