@@ -22,7 +22,7 @@ name: Mail-LMLM
 provides:
   Mail::LMLM:
     file: lib/Mail/LMLM.pm
-    version: 0.6802
+    version: 0.6803
   Mail::LMLM::Object:
     file: lib/Mail/LMLM/Object.pm
   Mail::LMLM::Render:
@@ -53,4 +53,4 @@ requires:
 resources:
   license: http://www.opensource.org/licenses/mit-license.php
   repository: http://bitbucket.org/shlomif/perl-mail-lmlm/overview
-version: 0.6802
+version: 0.6803

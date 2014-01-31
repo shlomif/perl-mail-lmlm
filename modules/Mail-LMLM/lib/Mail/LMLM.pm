@@ -9,7 +9,7 @@ use Mail::LMLM::Object;
 
 use vars qw($VERSION);
 
-$VERSION = '0.6802';
+$VERSION = '0.6803';
 
 use vars qw(@ISA);
 

@@ -1,12 +1,15 @@
-0.6802   ( Fri 31 Jan 12:48:22 IST 2014 )
-    - Convert t/use.t to Test::More and use_ok().
-        - it previously used Test.pm and plain ok()s after use statements.
-        - Test.pm is no longer recommended.
-    - Enhance the Build.PL with keywords, resources, requires and build_requires.
+0.6803    ( Fri 31 Jan 12:48:22 IST 2014 )
+
     - Minimal version of perl is 5.008.
     - Add t/style-trailing-space.t and remove trailing space.
     - Add "use warnings;" everywhere.
     - Add the LICENSE file (CPANTS).
+
+0.6802    ( 2012-03-09 )
+    - Convert t/use.t to Test::More and use_ok().
+        - it previously used Test.pm and plain ok()s after use statements.
+        - Test.pm is no longer recommended.
+    - Enhance the Build.PL with keywords, resources, requires and build_requires.
 
 0.6801    ( Fri Feb 26 13:20:42 IST 2010 )
     - Correct the Google groups' mailing list homepage.
