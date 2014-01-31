@@ -1,6 +1,7 @@
 package Iglu::LMLM::Types::Perl_IL;
 
 use strict;
+use warnings;
 
 use Mail::LMLM::Types::Mailman;
 

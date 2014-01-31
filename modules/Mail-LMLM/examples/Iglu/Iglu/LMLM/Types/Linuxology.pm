@@ -1,6 +1,7 @@
 package Iglu::LMLM::Types::Linuxology;
 
 use strict;
+use warnings;
 
 use Mail::LMLM::Types::Base;
 

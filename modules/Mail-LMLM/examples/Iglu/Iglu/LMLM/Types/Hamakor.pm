@@ -1,6 +1,7 @@
 package Iglu::LMLM::Types::Hamakor;
 
 use strict;
+use warnings;
 
 use Iglu::LMLM::Types::Iglu;
 

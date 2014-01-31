@@ -1,6 +1,7 @@
 package Mail::LMLM::Types::Mailman;
 
 use strict;
+use warnings;
 
 use Mail::LMLM::Types::Base;
 

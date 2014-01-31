@@ -4,6 +4,7 @@
     - Enhance the Build.PL with keywords, resources, requires and build_requires.
     - Minimal version of perl is 5.008.
     - Add t/style-trailing-space.t and remove trailing space.
+    - Add "use warnings;" everywhere.
 
 0.6801    ( Fri Feb 26 13:20:42 IST 2010 )
     - Correct the Google groups' mailing list homepage.

@@ -1,6 +1,7 @@
 package Mail::LMLM::Types::Egroups;
 
 use strict;
+use warnings;
 
 use Mail::LMLM::Types::Ezmlm;
 

@@ -1,6 +1,7 @@
 package Mail::LMLM::Render::HTML;
 
 use strict;
+use warnings;
 
 use vars qw(@ISA);
 

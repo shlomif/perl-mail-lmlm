@@ -1,6 +1,7 @@
 package Mail::LMLM::Object;
 
 use strict;
+use warnings;
 
 sub new
 {

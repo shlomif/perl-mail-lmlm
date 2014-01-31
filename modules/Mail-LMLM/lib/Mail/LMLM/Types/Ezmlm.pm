@@ -1,6 +1,7 @@
 package Mail::LMLM::Types::Ezmlm;
 
 use strict;
+use warnings;
 
 use Mail::LMLM::Types::Base;
 

@@ -1,6 +1,7 @@
 package Iglu::LMLM::Types::Iglu;
 
 use strict;
+use warnings;
 
 use Mail::LMLM::Types::Ezmlm;
 

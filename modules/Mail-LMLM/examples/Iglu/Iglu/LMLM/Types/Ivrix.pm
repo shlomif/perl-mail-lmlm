@@ -1,6 +1,7 @@
 package Iglu::LMLM::Types::Ivrix;
 
 use strict;
+use warnings;
 
 use Mail::LMLM::Types::Majordomo;
 
