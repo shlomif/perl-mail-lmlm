@@ -1,3 +1,4 @@
+0.6802   ( Fri 31 Jan 12:48:22 IST 2014 )
     - Convert t/use.t to Test::More and use_ok().
         - it previously used Test.pm and plain ok()s after use statements.
         - Test.pm is no longer recommended.
