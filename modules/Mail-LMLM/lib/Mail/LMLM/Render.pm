@@ -26,7 +26,7 @@ sub url
     my $url = shift;
 
     my $inside;
-    
+
     if (scalar(@_))
     {
         $inside = shift;
@@ -71,9 +71,9 @@ Mail::LMLM::Render - rendering backend for LMLM
     my $r = Mail::LMLM::Render::HTML->new(\*O);
 
     $r->start_document("My Document", "Head Title");
-    
+
     $r->start_section("Google", { 'title_url' => "http://www.google.com/", });
-    
+
     $r->para("Google is a very nice search engine.");
     $r->end_section();
     $r->end_document();
@@ -104,11 +104,11 @@ Terminates the document.
 =head2 start_section($title [, { 'title_url' => $url } ])
 
 Starts a section titled $title. The second optional paramter contains
-options. Currently the following options are available: 
+options. Currently the following options are available:
 
 =over 4
 
-=item C<'title_url'> 
+=item C<'title_url'>
 
 A URL for the section to point to.
 
@@ -172,7 +172,7 @@ to $url if not specified).
 
 =head2 para($text [, $style])
 
-Outputs the text $text with style $style (refer to the text() method) 
+Outputs the text $text with style $style (refer to the text() method)
 in its own paragraph.
 
 =head1 AUTHOR

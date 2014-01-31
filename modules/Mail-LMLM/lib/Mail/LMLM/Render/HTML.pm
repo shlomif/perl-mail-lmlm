@@ -57,14 +57,14 @@ sub _htmlize
 sub text
 {
     my $self = shift;
-    
+
     my $text = shift;
 
     my $style;
-    
+
     if (scalar(@_))
     {
-        $style = shift;    
+        $style = shift;
     }
     else
     {
@@ -143,7 +143,7 @@ sub start_section
     my $title = shift;
 
     my $options;
-    
+
     if (scalar(@_))
     {
         $options = shift;
@@ -170,10 +170,10 @@ sub start_section
     if (exists($options->{'title_url'}))
     {
         print {*{$o}} "</a>";
-    }    
+    }
     print {*{$o}} "</h2>" ;
     print {*{$o}} "\n\n";
-    
+
 
     return 0;
 }
@@ -214,12 +214,12 @@ sub start_document
     my $body_title = shift;
 
     $head_title = _htmlize($head_title);
-    
+
     my $o = $self->{'out'};
 
     print {*{$o}} <<"EOF" ;
 <?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
+<!DOCTYPE html
      PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
@@ -230,7 +230,7 @@ sub start_document
 </head>
 <body>
 EOF
-        
+
 
     print {*{$o}}("<h1>");
 
@@ -277,9 +277,9 @@ Mail::LMLM::Render::HTML - backend for rendering HTML.
     my $r = Mail::LMLM::Render::HTML->new(\*O);
 
     $r->start_document("My Document", "Head Title");
-    
+
     $r->start_section("Google", { 'title_url' => "http://www.google.com/", });
-    
+
     $r->para("Google is a very nice search engine.");
     $r->end_section();
     $r->end_document();

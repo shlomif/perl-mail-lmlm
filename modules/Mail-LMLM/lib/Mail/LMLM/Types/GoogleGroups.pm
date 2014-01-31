@@ -17,7 +17,7 @@ sub parse_args
 
 
     $args = $self->SUPER::parse_args($args);
-    
+
     my (@left, $key, $value);
 
     while (scalar(@$args))

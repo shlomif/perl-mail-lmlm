@@ -3,6 +3,7 @@
         - Test.pm is no longer recommended.
     - Enhance the Build.PL with keywords, resources, requires and build_requires.
     - Minimal version of perl is 5.008.
+    - Add t/style-trailing-space.t and remove trailing space.
 
 0.6801    ( Fri Feb 26 13:20:42 IST 2010 )
     - Correct the Google groups' mailing list homepage.
@@ -19,7 +20,7 @@
 
 0.6500:   ( Thu Jul 23 18:04:02 IDT 2009 )
     - Added the -owner address to mailman.
-    
+
 0.6400:   ( Wed Mar  7 21:13:01 IST 2007 )
     - Kwalitee improvements:
         - Added pod.t and pod-coverage.t files.
@@ -45,8 +46,8 @@
 
     Added the RPM Spec file.
 
-0.5.15: 
-    Added a t/use.t test and made sure the objects were moved to blib 
+0.5.15:
+    Added a t/use.t test and made sure the objects were moved to blib
     during the installation.
 
     The version is now read from Mail::LMLM.pm instead of the ver.txt

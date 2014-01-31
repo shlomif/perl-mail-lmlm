@@ -12,13 +12,13 @@ use Iglu::LMLM::Types::Hamakor;
 
 my $prefix = "Iglu::LMLM::Types::";
 
-my %extra_mailing_list_classes = 
+my %extra_mailing_list_classes =
 (
     (map { $_ => $prefix . ucfirst($_) } (qw(ivrix linuxology iglu hamakor))),
     "perl-il" => $prefix . "Perl_IL",
 );
 
-my @lists = 
+my @lists =
 (
     {
         'id' => 'gnubies-il',
@@ -42,7 +42,7 @@ my @lists =
         'online_archive' => sub {
             my $self = shift;
             my $r = shift;
-            
+
             $r->start_para();
             $r->text("Hamakor Archive: ");
             $r->url("http://mirror.hamakor.org.il/archives/linux-il/");
@@ -56,14 +56,14 @@ my @lists =
             $r->end_para();
 
         },
-        'guidelines' => ("Linux-related questions and discussions. No " . 
+        'guidelines' => ("Linux-related questions and discussions. No " .
             "newbie questions (use gnubies-il instead).\n" .
             "\n" .
             "Post size is limited to 16 kilobytes. Larger posts are queued for " .
             "moderator approval.\n" .
             "\n" .
             "If you are not subscribed the message that you send to the list will " .
-            "require moderator approval and will not be sent to the members " . 
+            "require moderator approval and will not be sent to the members " .
             "automatically.\n"
             ),
     },
@@ -118,7 +118,7 @@ my @lists =
         'class' => 'iglu',
         'group_base' => 'iglu-jlc',
         'description' => ("The Jerusalem Linux Club's mailing list. " .
-            "Subscribe to get announcements, coordination activity " . 
+            "Subscribe to get announcements, coordination activity " .
             "and other discussions."
         ),
         'title' => "The Jerusalem Linux Club Activities",
@@ -136,7 +136,7 @@ my @lists =
         'class' => 'hamakor',
         'group_base' => 'telux',
         'description' => ("The Tel-Aviv Linux Club's mailing list. " .
-            "Subscribe to get announcements, coordination activity " . 
+            "Subscribe to get announcements, coordination activity " .
             "and other discussions."
         ),
         'title' => "The Tel Aviv Linux Club Discussion List",
@@ -149,20 +149,20 @@ my @lists =
             $self->render_none($r);
         },
     },
-    
+
     {
         'id' => 'linux-il-announce',
         'class' => 'listar',
         'group_base' => 'linux-il-announce',
         'hostname' => 'linux.org.il',
-        'description' => ("Announcements for Linux users in Israel " . 
+        'description' => ("Announcements for Linux users in Israel " .
             "(Linux-IL members are automatically subscribed)"),
         'homepage' => "http://www.iglu.org.il/",
         'title' => "Linux-IL Announce",
         'online_archive' => sub {
             my $self = shift;
             my $r = shift;
-            
+
             $r->start_para();
             $r->text("Plasma-Gate archive: ");
             $r->url("http://plasma-gate.weizmann.ac.il/Linux/maillists/");
@@ -173,10 +173,10 @@ my @lists =
 
         },
         'guidelines' => ("This list is moderated and the moderator accepts " .
-             "any Linux-related announcements. Note that one is " . 
+             "any Linux-related announcements. Note that one is " .
              "already subscribed to it if he is subscribed to Linux-IL"
              ),
-    },    
+    },
     {
         'id' => 'debian-il',
         'class' => 'ezmlm',
@@ -186,8 +186,8 @@ my @lists =
         'title' => "Debian-IL",
         'description' => ("A group dedicated for users of the Debian Linux " .
             "distribution in Israel."),
-        'guidelines' => ("Coordination of Debian activities in Israel. " . 
-            "Local Debian support and advocacy. Questions of " . 
+        'guidelines' => ("Coordination of Debian activities in Israel. " .
+            "Local Debian support and advocacy. Questions of " .
             "localization of Debian to Israel "),
         'online_archive' => "http://www.mail-archive.com/debian-il\@debian.org.il/",
     },
@@ -197,12 +197,12 @@ my @lists =
         'hostname' => "post.tau.ac.il",
         'title' => "Israeli BSD List",
         'group_base' => "il-bsd",
-        'description' => ("This is the Israeli mailing list for the " . 
-            "BSD-derived operating systems. Discussions regarding FreeBSD, " .            
+        'description' => ("This is the Israeli mailing list for the " .
+            "BSD-derived operating systems. Discussions regarding FreeBSD, " .
             "OpenBSD, NetBSD and BSDi are welcome"),
         'guidelines' => "None.",
-        'online_archive' => "http://post.tau.ac.il/archives/il-bsd.html",            
-    }, 
+        'online_archive' => "http://post.tau.ac.il/archives/il-bsd.html",
+    },
     {
         'id' => 'hackers-il',
         'class' => 'egroups',
@@ -210,7 +210,7 @@ my @lists =
         'group_base' => 'hackers-il',
         'description' => ("Hackers-IL is a mailing-list dedicated to general " .
             "discussion of computer-related topics by Israeli people."),
-        'guidelines' => ("Computers or science related discussions, " . 
+        'guidelines' => ("Computers or science related discussions, " .
             "questions, news, announcements, etc. If it's specifically " .
             "related to Linux, you should consider posting it to the " .
             "Linux-IL or gnubies-il mailing-lists instead."),
@@ -233,7 +233,7 @@ my @lists =
         },
         'guidelines' => ("Whatever is related to the Israeli Group of Linux " .
             "Users' web-site. Other messages should be directed to the other " .
-            "lists."),            
+            "lists."),
     },
     {
         'id' => 'perl-il',
@@ -247,7 +247,7 @@ my @lists =
     },
     {
         'id' => 'perl-il-news',
-        'class' => "perl-il", 
+        'class' => "perl-il",
         'title' => "Israeli Perl News & Announcements",
         'group_base' => 'news',
         'description' => ("This is a mailing list for Israeli Perl News and Announcemnts."),
@@ -269,7 +269,7 @@ my @lists =
         'group_base' => 'gamla-devel',
         'title' => "Gamla Development",
         'description' => sub {
-            
+
             my $self = shift;
             my $r = shift;
 
@@ -278,7 +278,7 @@ my @lists =
             $r->url("http://gamla.iglu.org.il/", "Gamla");
             $r->text(", the RAD and WWW application server for perl.");
             $r->end_para();
-            
+
             },
         'guidelines' => ("Whatever is related to the development and " .
             "usage of Gamla: discussions, suggestions, questions, " .
@@ -291,12 +291,12 @@ my @lists =
         'title' => "Ivrix Discussions List",
         'description' => ["Discussions mailing list for the Ivrix Project.",
 
-            "This is a higher-volume mailing list intended for " . 
-            "discussing ideas for Ivrix, Ivrix projects, or " . 
-            "anything related to Hebrew support for Unix. It is " . 
-            "recommended that every Ivrix member who intends to " . 
-            "actively participate in Ivrix development " . 
-            "(or follow it closely) should subscribe to this " . 
+            "This is a higher-volume mailing list intended for " .
+            "discussing ideas for Ivrix, Ivrix projects, or " .
+            "anything related to Hebrew support for Unix. It is " .
+            "recommended that every Ivrix member who intends to " .
+            "actively participate in Ivrix development " .
+            "(or follow it closely) should subscribe to this " .
             "mailing list. "
             ],
          'guidelines' => ("Whatever related to Ivrix or Hebrew support " .
@@ -312,9 +312,9 @@ Mailing List dedicated to translation of technical or semi-technical documents
 from English to Hebrew or Arabic.
 EOF
         ],
-         'guidelines' => ("Whatever related to translation of documents." . 
+         'guidelines' => ("Whatever related to translation of documents." .
             "Posts partially in Hebrew are acceptable."),
-     },     
+     },
      {
         'id' => 'haifa-linux-club-projects',
         'class' => 'ezmlm',
@@ -322,7 +322,7 @@ EOF
         'hostname' => "vipe.technion.ac.il",
         'homepage' => "http://linuxclub.il.eu.org/",
         'title' => "Haifa Linux Club's Projects Mailing-list",
-        'description' => ("The Linux Club's programming projects are discussed " . 
+        'description' => ("The Linux Club's programming projects are discussed " .
             "here.")
         ,
         'guidelines' => ("Anthing that is related to the Linux Club's Programming Projects"),
@@ -336,15 +336,15 @@ sub prolog
     my $main_r = shift;
 
     $main_r->para( "This is a list of the mailing-lists which are affiliated " .
-        "with the Israeli Group of Linux Users (IGLU). It includes such " . 
-        "information as how to subscribe/unsubscribe, posting address, " . 
-        "posting guidelines, the address of the mailing-list owner, the " . 
+        "with the Israeli Group of Linux Users (IGLU). It includes such " .
+        "information as how to subscribe/unsubscribe, posting address, " .
+        "posting guidelines, the address of the mailing-list owner, the " .
         "mailing-list's homepage and the online messages archive."
     );
 
     $main_r->start_para();
-    $main_r->text("If you have any comments, suggestions or additions " . 
-        "regarding the information contained here, don't hesitate to " . 
+    $main_r->text("If you have any comments, suggestions or additions " .
+        "regarding the information contained here, don't hesitate to " .
         "contact the maintainer of these pages at the following e-mail: ");
 
     $main_r->email_address("shlomif", "vipe.technion.ac.il");
@@ -403,7 +403,7 @@ sub epilog
     $main_r->end_para();
 }
 
-my $renderer = 
+my $renderer =
     Mail::LMLM->new(
         'extra-classes' => \%extra_mailing_list_classes,
         title => "List of Linux-related mailing-lists in Israel",

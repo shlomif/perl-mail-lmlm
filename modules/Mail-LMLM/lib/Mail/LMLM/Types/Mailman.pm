@@ -15,7 +15,7 @@ sub parse_args
     my $args = shift;
 
     $args = $self->SUPER::parse_args($args);
-    
+
     my (@left, $key, $value);
 
     while (scalar(@$args))
@@ -39,7 +39,7 @@ sub parse_args
 
     return \@left;
 
-    
+
     return $args;
 }
 
@@ -55,7 +55,7 @@ sub get_maintenance_url
     {
         return $self->{'homepage'} . "mailman/listinfo/" . $self->get_group_base(). "/";
     }
-        
+
 }
 
 sub group_form
@@ -97,7 +97,7 @@ sub render_maint_url
 {
     my $self = shift;
     my $htmler = shift;
-    
+
     $htmler->start_para();
     $htmler->text("Go to ");
     $htmler->url($self->get_maintenance_url(), "to the maintenance URL");
@@ -185,7 +185,7 @@ Over-rides the equivalent from L<Mail::LMLM::Types::Base>.
 =head2 render_post
 
 Over-rides the equivalent from L<Mail::LMLM::Types::Base>.
- 
+
 =head2 render_owner
 
 Over-rides the equivalent from L<Mail::LMLM::Types::Base>.

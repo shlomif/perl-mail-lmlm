@@ -35,10 +35,10 @@ sub _pref
     return $prefix . $name;
 }
 
-%mailing_list_classes = 
+%mailing_list_classes =
 (
     (
-        map { $_ => _pref(ucfirst($_)) } 
+        map { $_ => _pref(ucfirst($_)) }
         ('egroups', 'ezmlm', 'listar', 'majordomo', 'listserv', 'mailman')
     ),
     "google" => _pref("GoogleGroups"),
@@ -155,9 +155,9 @@ sub render
         $self->{'title'},
         $self->{'headline'},
         );
-        
+
     $self->{'prolog'}->($self, $main_r);
-    
+
     local(*O);
 
     foreach $mailing_list (@{$self->{'lists'}})
@@ -165,7 +165,7 @@ sub render
         $filename = $mailing_list->{'id'}.".html";
         open O, ">".$filename;
         $r = Mail::LMLM::Render::HTML->new(\*O);
-        
+
         my $class_name = $mailing_list->{'class'};
         my $class = $mailing_list_classes{$class_name} || $self->{'extra_classes'}->{$class_name} || die "Mail::LMLM: Unknown Class \"$class_name\"";
         if (ref($class) eq "CODE")
@@ -176,13 +176,13 @@ sub render
         {
             $mail_lister = $class->new(%$mailing_list);
         }
-        
-        my $title = exists($mailing_list->{'title'}) ? 
+
+        my $title = exists($mailing_list->{'title'}) ?
             $mailing_list->{'title'} :
             $mailing_list->{'id'};
 
         $r->start_document($title, $title);
-        
+
         foreach my $what (@render_what)
         {
             my $func = $what->{'func'};
@@ -233,7 +233,7 @@ Mail::LMLM - List of Mailing Lists Manager
             lists => \@lists,
             prolog =>  \&prolog,
             epilog => \&epilog,
-        );    
+        );
 
     $renderer->render();
 
@@ -242,8 +242,8 @@ Mail::LMLM - List of Mailing Lists Manager
 The Mail::LMLM module allows users to easily manage HTML directories of
 mailing lists of various mailing list managers and hosts.
 
-To use it create a new module of type Mail::LMLM with a new method, while 
-initializing it with the list of mailing lists (in order of listing), and 
+To use it create a new module of type Mail::LMLM with a new method, while
+initializing it with the list of mailing lists (in order of listing), and
 other parameters. Then, invoke the render() function to create the HTML
 files within the current directory.
 
@@ -267,27 +267,27 @@ same for the text after the listing itself. Here is an example for it:
         my $main_r = shift;
 
         $main_r->para( "This is a list of the mailing-lists which are affiliated " .
-            "with the Israeli Group of Linux Users (IGLU). It includes such " . 
-            "information as how to subscribe/unsubscribe, posting address, " . 
-            "posting guidelines, the address of the mailing-list owner, the " . 
+            "with the Israeli Group of Linux Users (IGLU). It includes such " .
+            "information as how to subscribe/unsubscribe, posting address, " .
+            "posting guidelines, the address of the mailing-list owner, the " .
             "mailing-list's homepage and the online messages archive."
         );
 
         $main_r->start_para();
-        $main_r->text("If you have any comments, suggestions or additions " . 
-            "regarding the information contained here, don't hesitate to " . 
+        $main_r->text("If you have any comments, suggestions or additions " .
+            "regarding the information contained here, don't hesitate to " .
             "contact the maintainer of these pages at the following e-mail: ");
 
         $main_r->email_address("shlomif", "vipe.technion.ac.il");
         $main_r->end_para();
 }
 
-For more information on how to interface with the renderer consult 
+For more information on how to interface with the renderer consult
 the L<HTML::LMLM::Render> reference page.
 
 =head2 extra-classes
 
-This is a reference to a hash whose keys are extra IDs for mailing lists 
+This is a reference to a hash whose keys are extra IDs for mailing lists
 classes, and its values are either the namespace of the Perl module that
 implements this class, or a subroutine that creates a new class like that.
 
@@ -297,7 +297,7 @@ section of the Mail::LMLM distribution.
 
 =head2 lists
 
-This is a reference to an array of hash references that contain the 
+This is a reference to an array of hash references that contain the
 information for the mailing lists. The fields available here are:
 
 =over 8

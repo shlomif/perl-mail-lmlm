@@ -13,7 +13,7 @@ sub parse_args
     my $args = shift;
 
     $args = $self->SUPER::parse_args($args);
-    
+
     return $args;
 }
 
@@ -70,8 +70,8 @@ sub render_sub_or_unsub
         $self->get_request_address()
         );
     $htmler->indent_dec();
-    
-    return 0;    
+
+    return 0;
 }
 
 sub render_subscribe
@@ -156,7 +156,7 @@ Over-rides the equivalent from L<Mail::LMLM::Types::Base>.
 =head2 render_post
 
 Over-rides the equivalent from L<Mail::LMLM::Types::Base>.
- 
+
 =head2 render_owner
 
 Over-rides the equivalent from L<Mail::LMLM::Types::Base>.

@@ -1,6 +1,13 @@
 Build.PL
-Changes
 COPYING
+Changes
+INSTALL
+MANIFEST
+META.json
+META.yml                                 Module meta-data (added by MakeMaker)
+Makefile.PL
+README
+TODO
 examples/Iglu/Iglu/LMLM/Types/Hamakor.pm
 examples/Iglu/Iglu/LMLM/Types/Iglu.pm
 examples/Iglu/Iglu/LMLM/Types/Ivrix.pm
@@ -11,11 +18,10 @@ examples/Iglu/test.pl
 examples/Iglu/upload.sh
 get-version.pl
 inc/Test/Run/Builder.pm
-INSTALL
-lib/Mail/LMLM/Object.pm
 lib/Mail/LMLM.pm
-lib/Mail/LMLM/Render/HTML.pm
+lib/Mail/LMLM/Object.pm
 lib/Mail/LMLM/Render.pm
+lib/Mail/LMLM/Render/HTML.pm
 lib/Mail/LMLM/Types/Base.pm
 lib/Mail/LMLM/Types/Egroups.pm
 lib/Mail/LMLM/Types/Ezmlm.pm
@@ -24,15 +30,10 @@ lib/Mail/LMLM/Types/Listar.pm
 lib/Mail/LMLM/Types/Listserv.pm
 lib/Mail/LMLM/Types/Mailman.pm
 lib/Mail/LMLM/Types/Majordomo.pm
-Makefile.PL
-MANIFEST
-META.yml                                 Module meta-data (added by MakeMaker)
 perl-Mail-LMLM.spec
 perl-Mail-LMLM.spec.in
 prepare_package.sh
-README
-TODO
 t/pod-coverage.t
 t/pod.t
+t/style-trailing-space.t
 t/use.t
-META.json

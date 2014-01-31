@@ -37,7 +37,7 @@ sub get_homepage
     }
     else
     {
-        return "http://" . $self->get_homepage_hostname() . 
+        return "http://" . $self->get_homepage_hostname() .
             "/group/" . $self->get_group_base() . "/";
     }
 }

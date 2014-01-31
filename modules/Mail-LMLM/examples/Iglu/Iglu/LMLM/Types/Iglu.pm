@@ -44,7 +44,7 @@ sub get_homepage
 sub get_default_homepage
 {
     my $self = shift;
-    
+
     return "http://www.iglu.org.il/";
 }
 
@@ -61,7 +61,7 @@ sub get_online_archive
         return "http://www.mail-archive.com/" .
             $self->get_group_base() . '@' .
             $self->get_hostname() . "/";
-            
+
     }
 }
 

@@ -25,7 +25,7 @@ sub group_form
 sub _get_subscribe_address
 {
     my $self = shift;
-    
+
     return $self->group_form("subscribe");
 }
 
@@ -59,7 +59,7 @@ sub render_something_with_email_addr
     my $begin_msg = shift;
     my $address_method = shift;
 
-    
+
     $htmler->para($begin_msg);
     $htmler->indent_inc();
     $htmler->start_para();
@@ -155,7 +155,7 @@ Over-rides the equivalent from L<Mail::LMLM::Types::Base>.
 =head2 render_post
 
 Over-rides the equivalent from L<Mail::LMLM::Types::Base>.
- 
+
 =head2 render_owner
 
 Over-rides the equivalent from L<Mail::LMLM::Types::Base>.

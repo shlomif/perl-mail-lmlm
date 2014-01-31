@@ -50,7 +50,7 @@ sub parse_args
         }
         elsif ($key =~ /^-?(notes)$/)
         {
-            $self->{'notes'} = $value;            
+            $self->{'notes'} = $value;
         }
         else
         {
@@ -184,7 +184,7 @@ sub render_homepage
     {
         $self->render_none($htmler);
     }
-    
+
     return 0;
 }
 
@@ -267,7 +267,6 @@ sub render_something_with_email_addr
     my $begin_msg = shift;
     my $address_method = shift;
 
-    
     $htmler->para($begin_msg);
     $htmler->indent_inc();
     $htmler->start_para();

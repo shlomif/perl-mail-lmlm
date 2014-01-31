@@ -18,7 +18,7 @@ sub initialize
     {
         $self->{'hostname'} = "perl.org.il";
     }
-    
+
     if (! exists($self->{'owner'}) )
     {
         $self->{'owner'} = [ "gabor", "perl.org.il" ],

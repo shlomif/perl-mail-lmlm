@@ -15,7 +15,7 @@ sub parse_args
     my $args = shift;
 
     $args = $self->SUPER::parse_args($args);
-    
+
     my (@left, $key, $value);
 
     while (scalar(@$args))
@@ -156,7 +156,7 @@ Over-rides the equivalent from L<Mail::LMLM::Types::Base>.
 =head2 render_post
 
 Over-rides the equivalent from L<Mail::LMLM::Types::Base>.
- 
+
 =head2 render_owner
 
 Over-rides the equivalent from L<Mail::LMLM::Types::Base>.
