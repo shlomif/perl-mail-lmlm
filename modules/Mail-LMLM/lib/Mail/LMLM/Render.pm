@@ -178,5 +178,6 @@ in its own paragraph.
 
 =head1 AUTHOR
 
-Shlomi Fish E<lt>shlomif@vipe.technion.ac.ilE<gt>
+Shlomi Fish, L<http://www.shlomifish.org> .
 
+=cut

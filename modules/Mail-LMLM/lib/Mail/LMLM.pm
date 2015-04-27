@@ -279,9 +279,9 @@ same for the text after the listing itself. Here is an example for it:
             "regarding the information contained here, don't hesitate to " .
             "contact the maintainer of these pages at the following e-mail: ");
 
-        $main_r->email_address("shlomif", "vipe.technion.ac.il");
+        $main_r->email_address("shlomif", "shlomifish.org");
         $main_r->end_para();
-}
+    }
 
 For more information on how to interface with the renderer consult
 the L<HTML::LMLM::Render> reference page.

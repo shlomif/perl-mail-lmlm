@@ -50,12 +50,16 @@ print "Generating the RPM SPEC file\n";
 my $rpm_spec = "perl-Mail-LMLM.spec";
 # Remove the .spec because it's not writable.
 unlink($rpm_spec);
-open I, "<$rpm_spec.in";
-open O, ">$rpm_spec";
-while (<I>)
 {
-    s!\[\[VERSION\]\]!$version!g;
-    print O $_;
+    open my $in, '<', "$rpm_spec.in"
+        or die "Cannot open in. $!";
+    open my $out, '>', $rpm_spec
+        or die "Cannot open out. $!";
+    while (my $l = <$in>)
+    {
+        $l =~ s!\[\[VERSION\]\]!$version!g;
+        print {$out} $l;
+    }
+    close($out);
+    close($in);
 }
-close(O);
-close(I);
