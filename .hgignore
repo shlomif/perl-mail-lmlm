@@ -1,8 +1,1 @@
-modules/Mail-LMLM/Build
-modules/Mail-LMLM/META.json
-modules/Mail-LMLM/META.yml
-modules/Mail-LMLM/MYMETA.json
-modules/Mail-LMLM/MYMETA.yml
-modules/Mail-LMLM/Mail-LMLM-*
-modules/Mail-LMLM/_build
-modules/Mail-LMLM/blib
+modules/Mail-LMLM/.build

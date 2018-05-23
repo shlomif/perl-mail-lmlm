@@ -40,7 +40,9 @@ sub DESTROY
 
 __END__
 
-=head1 Mail::LMLM::Object
+=head1 NAME
+
+Mail::LMLM::Object
 
 Warning! This is an internal Mail::LMLM class. It is used as the base class
 for all LMLM objects.
