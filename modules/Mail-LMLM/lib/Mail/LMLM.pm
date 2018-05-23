@@ -7,10 +7,6 @@ use 5.008;
 
 use Mail::LMLM::Object;
 
-use vars qw($VERSION);
-
-$VERSION = '0.6804';
-
 use vars qw(@ISA);
 
 @ISA=qw(Mail::LMLM::Object);
