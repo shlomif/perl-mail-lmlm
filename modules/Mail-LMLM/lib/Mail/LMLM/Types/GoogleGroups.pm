@@ -7,7 +7,7 @@ use Mail::LMLM::Types::Mailman;
 
 use vars qw(@ISA);
 
-@ISA=qw(Mail::LMLM::Types::Mailman);
+@ISA = qw(Mail::LMLM::Types::Mailman);
 
 sub parse_args
 {
@@ -15,21 +15,20 @@ sub parse_args
 
     my $args = shift;
 
-
     $args = $self->SUPER::parse_args($args);
 
-    my (@left, $key, $value);
+    my ( @left, $key, $value );
 
-    while (scalar(@$args))
+    while ( scalar(@$args) )
     {
-        $key = shift(@$args);
+        $key   = shift(@$args);
         $value = shift(@$args);
 
-        if ($key =~ /^-?(maintenance[-_]url)$/)
+        if ( $key =~ /^-?(maintenance[-_]url)$/ )
         {
             $self->{'maintenance_url'} = $value;
         }
-        elsif ($key =~ /^-?(owner)$/)
+        elsif ( $key =~ /^-?(owner)$/ )
         {
             $self->{'owner'} = $value;
         }
@@ -40,7 +39,7 @@ sub parse_args
     }
 
     $self->{'google_homepage'} =
-        "http://groups.google.com/group/" . $self->get_group_base(). "/";
+        "http://groups.google.com/group/" . $self->get_group_base() . "/";
 
     $self->{'homepage'} = $self->{'google_homepage'};
 
@@ -51,7 +50,7 @@ sub get_maintenance_url
 {
     my $self = shift;
 
-    if (exists($self->{'maintenance_url'}))
+    if ( exists( $self->{'maintenance_url'} ) )
     {
         return $self->{'maintenance_url'};
     }
@@ -67,12 +66,8 @@ sub group_form
 
     my $add = shift;
 
-    return (
-        ( $self->get_group_base() .
-        ($add ? ("-" . $add) : "") )
-        ,
-        $self->get_hostname()
-        );
+    return ( ( $self->get_group_base() . ( $add ? ( "-" . $add ) : "" ) ),
+        $self->get_hostname() );
 }
 
 sub _get_post_address
@@ -86,9 +81,9 @@ sub _get_owner_address
 {
     my $self = shift;
 
-    if ($self->{owner})
+    if ( $self->{owner} )
     {
-        return @{$self->{owner}};
+        return @{ $self->{owner} };
     }
     else
     {

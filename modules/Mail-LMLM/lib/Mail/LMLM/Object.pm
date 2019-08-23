@@ -6,9 +6,9 @@ use warnings;
 sub new
 {
     my $class = shift;
-    my $self = {};
+    my $self  = {};
 
-    bless($self, $class);
+    bless( $self, $class );
 
     $self->initialize(@_);
 

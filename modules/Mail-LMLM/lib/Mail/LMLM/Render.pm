@@ -7,7 +7,7 @@ use vars qw(@ISA);
 
 use Mail::LMLM::Object;
 
-@ISA=qw(Mail::LMLM::Object);
+@ISA = qw(Mail::LMLM::Object);
 
 sub para
 {
@@ -28,7 +28,7 @@ sub url
 
     my $inside;
 
-    if (scalar(@_))
+    if ( scalar(@_) )
     {
         $inside = shift;
     }
@@ -49,7 +49,7 @@ sub email_address
     my $self = shift;
 
     my $account = shift;
-    my $host = shift;
+    my $host    = shift;
 
     $self->start_link("mailto:$account\@$host");
     $self->text("$account\@$host");

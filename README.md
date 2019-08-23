@@ -11,5 +11,4 @@ look at the Iglu example under examples.
 
 Regards,
 
-    Shlomi Fish, http://www.shlomifish.org/ .
-
+Shlomi Fish, https://www.shlomifish.org/ .

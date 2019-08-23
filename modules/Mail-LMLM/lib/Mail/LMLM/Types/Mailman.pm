@@ -7,7 +7,7 @@ use Mail::LMLM::Types::Base;
 
 use vars qw(@ISA);
 
-@ISA=qw(Mail::LMLM::Types::Base);
+@ISA = qw(Mail::LMLM::Types::Base);
 
 sub parse_args
 {
@@ -17,18 +17,18 @@ sub parse_args
 
     $args = $self->SUPER::parse_args($args);
 
-    my (@left, $key, $value);
+    my ( @left, $key, $value );
 
-    while (scalar(@$args))
+    while ( scalar(@$args) )
     {
-        $key = shift(@$args);
+        $key   = shift(@$args);
         $value = shift(@$args);
 
-        if ($key =~ /^-?(maintenance[-_]url)$/)
+        if ( $key =~ /^-?(maintenance[-_]url)$/ )
         {
             $self->{'maintenance_url'} = $value;
         }
-        elsif ($key =~ /^-?(owner)$/)
+        elsif ( $key =~ /^-?(owner)$/ )
         {
             $self->{'owner'} = $value;
         }
@@ -40,7 +40,6 @@ sub parse_args
 
     return \@left;
 
-
     return $args;
 }
 
@@ -48,13 +47,16 @@ sub get_maintenance_url
 {
     my $self = shift;
 
-    if (exists($self->{'maintenance_url'}))
+    if ( exists( $self->{'maintenance_url'} ) )
     {
         return $self->{'maintenance_url'};
     }
     else
     {
-        return $self->{'homepage'} . "mailman/listinfo/" . $self->get_group_base(). "/";
+        return
+              $self->{'homepage'}
+            . "mailman/listinfo/"
+            . $self->get_group_base() . "/";
     }
 
 }
@@ -65,12 +67,8 @@ sub group_form
 
     my $add = shift;
 
-    return (
-        ( $self->get_group_base() .
-        ($add ? ("-" . $add) : "") )
-        ,
-        $self->get_hostname()
-        );
+    return ( ( $self->get_group_base() . ( $add ? ( "-" . $add ) : "" ) ),
+        $self->get_hostname() );
 }
 
 sub _get_post_address
@@ -84,9 +82,9 @@ sub _get_owner_address
 {
     my $self = shift;
 
-    if ($self->{owner})
+    if ( $self->{owner} )
     {
-        return @{$self->{owner}};
+        return @{ $self->{owner} };
     }
     else
     {
@@ -96,12 +94,12 @@ sub _get_owner_address
 
 sub render_maint_url
 {
-    my $self = shift;
+    my $self   = shift;
     my $htmler = shift;
 
     $htmler->start_para();
     $htmler->text("Go to ");
-    $htmler->url($self->get_maintenance_url(), "to the maintenance URL");
+    $htmler->url( $self->get_maintenance_url(), "to the maintenance URL" );
     $htmler->text(" and follow the instructions there.");
     $htmler->end_para();
 
@@ -132,11 +130,9 @@ sub render_post
 
     my $htmler = shift;
 
-    return $self->render_something_with_email_addr(
-        $htmler,
+    return $self->render_something_with_email_addr( $htmler,
         "Send your messages to the following address: ",
-        \&_get_post_address
-        );
+        \&_get_post_address );
 }
 
 sub render_owner
@@ -145,11 +141,9 @@ sub render_owner
 
     my $htmler = shift;
 
-    return $self->render_something_with_email_addr(
-        $htmler,
+    return $self->render_something_with_email_addr( $htmler,
         "Send messages to the mailing-list owner to the following address: ",
-        \&_get_owner_address
-        );
+        \&_get_owner_address );
 }
 
 1;

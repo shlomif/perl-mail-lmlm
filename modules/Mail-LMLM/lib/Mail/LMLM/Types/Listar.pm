@@ -5,7 +5,7 @@ use warnings;
 
 use vars qw(@ISA);
 
-@ISA=qw(Mail::LMLM::Types::Base);
+@ISA = qw(Mail::LMLM::Types::Base);
 
 sub parse_args
 {
@@ -24,12 +24,8 @@ sub group_form
 
     my $add = shift;
 
-    return (
-        ( $self->get_group_base() .
-        ($add ? ("-" . $add) : "") )
-        ,
-        $self->get_hostname()
-        );
+    return ( ( $self->get_group_base() . ( $add ? ( "-" . $add ) : "" ) ),
+        $self->get_hostname() );
 }
 
 sub get_request_address
@@ -63,13 +59,11 @@ sub render_sub_or_unsub
 
     $htmler->para("Send a message containing the following line:");
     $htmler->indent_inc();
-    $htmler->para("$command", {'bold' => 1});
+    $htmler->para( "$command", { 'bold' => 1 } );
     $htmler->indent_dec();
     $htmler->para("To the following address:");
     $htmler->indent_inc();
-    $htmler->email_address(
-        $self->get_request_address()
-        );
+    $htmler->email_address( $self->get_request_address() );
     $htmler->indent_dec();
 
     return 0;
@@ -81,7 +75,7 @@ sub render_subscribe
 
     my $htmler = shift;
 
-    return $self->render_sub_or_unsub($htmler, "subscribe");
+    return $self->render_sub_or_unsub( $htmler, "subscribe" );
 }
 
 sub render_unsubscribe
@@ -90,7 +84,7 @@ sub render_unsubscribe
 
     my $htmler = shift;
 
-    return $self->render_sub_or_unsub($htmler, "unsubscribe");
+    return $self->render_sub_or_unsub( $htmler, "unsubscribe" );
 }
 
 sub render_post
@@ -99,11 +93,9 @@ sub render_post
 
     my $htmler = shift;
 
-    return $self->render_something_with_email_addr(
-        $htmler,
+    return $self->render_something_with_email_addr( $htmler,
         "Send your messages to the following address: ",
-        \&_get_post_address
-        );
+        \&_get_post_address );
 }
 
 sub render_owner
@@ -112,11 +104,9 @@ sub render_owner
 
     my $htmler = shift;
 
-    return $self->render_something_with_email_addr(
-        $htmler,
+    return $self->render_something_with_email_addr( $htmler,
         "Send messages to the mailing-list owner to the following address: ",
-        \&_get_owner_address
-        );
+        \&_get_owner_address );
 }
 
 1;
