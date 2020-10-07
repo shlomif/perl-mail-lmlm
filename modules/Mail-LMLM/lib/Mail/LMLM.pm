@@ -2,24 +2,20 @@ package Mail::LMLM;
 
 use strict;
 use warnings;
+use autodie;
 
 use 5.008;
 
-use Mail::LMLM::Object;
+use parent 'Mail::LMLM::Object';
 
-use vars qw(@ISA);
-
-@ISA = qw(Mail::LMLM::Object);
-
-use Mail::LMLM::Render::HTML;
-
-use Mail::LMLM::Types::Ezmlm;
-use Mail::LMLM::Types::Egroups;
-use Mail::LMLM::Types::Listar;
-use Mail::LMLM::Types::Majordomo;
-use Mail::LMLM::Types::Listserv;
-use Mail::LMLM::Types::Mailman;
-use Mail::LMLM::Types::GoogleGroups;
+use Mail::LMLM::Render::HTML        ();
+use Mail::LMLM::Types::Ezmlm        ();
+use Mail::LMLM::Types::Egroups      ();
+use Mail::LMLM::Types::Listar       ();
+use Mail::LMLM::Types::Majordomo    ();
+use Mail::LMLM::Types::Listserv     ();
+use Mail::LMLM::Types::Mailman      ();
+use Mail::LMLM::Types::GoogleGroups ();
 
 use vars qw(%mailing_list_classes);
 
@@ -140,24 +136,20 @@ sub render
 {
     my $self = shift;
 
-    my ( $mail_lister, $mailing_list, $o, $r, $main_o, $main_r, $filename );
+    my ( $mail_lister, $o, $r, $main_o, $main_r, $filename );
 
-    local (*INDEX);
-
-    open INDEX, ">index.html";
-    $main_r = Mail::LMLM::Render::HTML->new( \*INDEX );
+    open my $index_fh, ">", "index.html";
+    $main_r = Mail::LMLM::Render::HTML->new( \$index_fh );
 
     $main_r->start_document( $self->{'title'}, $self->{'headline'}, );
 
     $self->{'prolog'}->( $self, $main_r );
 
-    local (*O);
-
-    foreach $mailing_list ( @{ $self->{'lists'} } )
+    foreach my $mailing_list ( @{ $self->{'lists'} } )
     {
         $filename = $mailing_list->{'id'} . ".html";
-        open O, ">" . $filename;
-        $r = Mail::LMLM::Render::HTML->new( \*O );
+        open my $o_fh, ">", $filename;
+        $r = Mail::LMLM::Render::HTML->new( \$o_fh );
 
         my $class_name = $mailing_list->{'class'};
         my $class =
@@ -194,22 +186,21 @@ sub render
 
         $r->end_document();
 
-        close(O);
+        close($o_fh);
     }
 
     $self->{'epilog'}->( $self, $main_r );
 
     $main_r->end_document();
-    close(INDEX);
+    close($index_fh);
 
-    local (*STYLE);
-    open STYLE, ">style.css";
-    print STYLE <<"EOF";
+    open my $STYLE, ">", "style.css";
+    print {$STYLE} <<"EOF";
 a:hover { background-color : LightGreen }
 div.indent { margin-left : 3em }
 EOF
 
-    close(STYLE);
+    close($STYLE);
 }
 
 #### Documentation
