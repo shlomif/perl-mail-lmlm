@@ -90,15 +90,14 @@ sub initialize
 {
     my $self = shift;
 
-    my ( $key, $value );
     $self->{'title'}         = "List of Mailing Lists";
     $self->{'headline'}      = "List of Mailing Lists";
     $self->{'prolog'}        = $self->{'epilog'} = \&_do_nothing;
     $self->{'extra_classes'} = {};
     while ( scalar(@_) )
     {
-        $key   = shift;
-        $value = shift;
+        my $key   = shift;
+        my $value = shift;
         if ( $key =~ /^-?lists$/ )
         {
             $self->{'lists'} = $value;
@@ -136,10 +135,8 @@ sub render
 {
     my $self = shift;
 
-    my ( $mail_lister, $o, $r, $main_o, $main_r, $filename );
-
     open my $index_fh, ">", "index.html";
-    $main_r = Mail::LMLM::Render::HTML->new( \$index_fh );
+    my $main_r = Mail::LMLM::Render::HTML->new( \$index_fh );
 
     $main_r->start_document( $self->{'title'}, $self->{'headline'}, );
 
@@ -147,23 +144,20 @@ sub render
 
     foreach my $mailing_list ( @{ $self->{'lists'} } )
     {
-        $filename = $mailing_list->{'id'} . ".html";
+        my $filename = $mailing_list->{'id'} . ".html";
         open my $o_fh, ">", $filename;
-        $r = Mail::LMLM::Render::HTML->new( \$o_fh );
+        my $r = Mail::LMLM::Render::HTML->new( \$o_fh );
 
         my $class_name = $mailing_list->{'class'};
         my $class =
                $mailing_list_classes{$class_name}
             || $self->{'extra_classes'}->{$class_name}
             || die "Mail::LMLM: Unknown Class \"$class_name\"";
-        if ( ref($class) eq "CODE" )
-        {
-            $mail_lister = $class->(%$mailing_list);
-        }
-        else
-        {
-            $mail_lister = $class->new(%$mailing_list);
-        }
+        my $mail_lister = (
+            ( ref($class) eq "CODE" )
+            ? $class->(%$mailing_list)
+            : $class->new(%$mailing_list)
+        );
 
         my $title =
             exists( $mailing_list->{'title'} )
